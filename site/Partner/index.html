@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>PartnerApi - LK Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "PartnerApi";
+    var mkdocs_page_input_path = "Partner.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LK Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Auth/">Authentication</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">PartnerApi</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#application-creation-api">Application creation API</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#http-request">HTTP Request</a></li>
+        
+            <li><a class="toctree-l3" href="#query-parameters">Query Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#sample-request-body">Sample Request body</a></li>
+        
+            <li><a class="toctree-l3" href="#http-request_1">HTTP Request</a></li>
+        
+            <li><a class="toctree-l3" href="#query-parameters_1">Query Parameters</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#document-status-api">Document Status API</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#http-request_2">HTTP Request</a></li>
+        
+            <li><a class="toctree-l3" href="#query-parameters_2">Query Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#response-body">Response Body</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#disbursal-data-api">disbursal data API</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#http-request_3">HTTP Request</a></li>
+        
+            <li><a class="toctree-l3" href="#query-parameters_3">Query Parameters</a></li>
+        
+            <li><a class="toctree-l3" href="#response-body_1">Response Body</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LK Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>PartnerApi</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="application-creation-api">Application creation API</h1>
+<pre><code class="shell">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+ 'https://lkext.lendingkart.com/v2/partner/leads/create-application'
+</code></pre>
+
+<p>This api creates an application in lendingkart system and returns a leadId along with an applicationId on SUCCESS.</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>POST https://lkext.lendingkart.com/v2/partner/leads/create-application</code></p>
+<blockquote>
+<p>Output response:</p>
+</blockquote>
+<pre><code class="json">{
+  &quot;leadId&quot;: &quot;341134&quot;,
+  &quot;applicationId&quot;: null,
+  &quot;message&quot;: &quot;Application or lead already exist with us&quot;,
+  &quot;errorMessageList&quot;: null,
+  &quot;uniqueId&quot;: &quot;string&quot;,
+  &quot;loanDeliveryMethod&quot;: null
+}
+</code></pre>
+
+<h3 id="query-parameters">Query Parameters</h3>
+<p>No query parameter</p>
+<h3 id="sample-request-body">Sample Request body</h3>
+<pre><code class="json">{
+  &quot;firstName&quot;: &quot;Bala&quot;,
+  &quot;lastName&quot;: &quot;Ganesh&quot;,
+  &quot;email&quot;: &quot;Bala.Ganeshtest1@example.com&quot;,
+  &quot;mobile&quot;: &quot;6666698762&quot;,
+  &quot;businessRevenue&quot;: 5000000,
+  &quot;businessAge&quot;: 24,
+  &quot;registeredAs&quot;: &quot;Proprietorship&quot;,
+  &quot;personalDob&quot;: &quot;1990-05-21&quot;,
+  &quot;personalPAN&quot;: &quot;ARTPA1156H&quot;,
+  &quot;gender&quot;: &quot;MALE&quot;,
+  &quot;cibilConsentForLK&quot;: true,
+  &quot;mobileNoVerified&quot;: true,
+  &quot;personalAddress&quot;: {
+    &quot;ownership&quot;: &quot;string&quot;,
+    &quot;address&quot;: &quot;4/5, Race Course Road&quot;,
+    &quot;city&quot;: &quot;Coimbatore&quot;,
+    &quot;state&quot;: &quot;TamilNadu&quot;,
+    &quot;pincode&quot;: &quot;641041&quot;
+  },
+  &quot;businessRunBy&quot;: &quot;Self&quot;,
+  &quot;loanAmount&quot;: 100000,
+  &quot;typeOfLoan&quot;: &quot;INSTANT&quot;,
+  &quot;companyName&quot;: &quot;Sakthi Enterprises&quot;,
+  &quot;businessAddress&quot;: {
+    &quot;ownership&quot;: &quot;string&quot;,
+    &quot;address&quot;: &quot;4/5, Race Course Road&quot;,
+    &quot;city&quot;: &quot;Coimbatore&quot;,
+    &quot;state&quot;: &quot;TamilNadu&quot;,
+    &quot;pincode&quot;: &quot;641041&quot;
+  },
+  &quot;loanNeedTime&quot;: &quot;After 2 weeks&quot;,
+  &quot;uniqueId&quot;: &quot;string&quot;,
+  &quot;otherFields&quot;: {}
+}
+
+## Response Body
+Field | Description | Data Type
+------| -----------|---------
+ leadId | This is unique leadId | String
+ application ID | This is application id | String
+ message | This is message returned | String
+ loanDeliveryMethod | This is delivery method of you application | String
+ leadId | This is unique leadId | String
+
+&lt;aside class=&quot;success&quot;&gt;
+Succesful api call would give you 200
+&lt;/aside&gt;
+
+[To try this Api please click this](https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/leadApplicationCreationUsingPOST)
+
+# Document upload API
+```shell
+curl -X POST --header 'Content-Type: multipart/form-data' --header 'Accept: */*' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211' {&quot;type&quot;:&quot;formData&quot;}
+ 'https://lkext.lendingkart.com/v2/partner/leads/documents'
+</code></pre>
+
+<p>This API enables document upload functionality for partners.</p>
+<h3 id="http-request_1">HTTP Request</h3>
+<p><code>POST https://lkext.lendingkart.com/v2/partner/leads/documents</code></p>
+<pre><code class="json">
+</code></pre>
+
+<h3 id="query-parameters_1">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Data Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applicationId</td>
+<td>This is application id</td>
+<td>String</td>
+<td>true</td>
+</tr>
+<tr>
+<td>documentType</td>
+<td>This is document type</td>
+<td>String</td>
+<td>true</td>
+</tr>
+<tr>
+<td>bankName</td>
+<td>This is bank name</td>
+<td>String</td>
+<td>false</td>
+</tr>
+<tr>
+<td>bankAccountNo</td>
+<td>This is bankAccountNo</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+<p><a href="https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/uploadDocumentsUsingPOST">To try this Api please click this</a></p>
+<h1 id="document-status-api">Document Status API</h1>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+'https://lkext.lendingkart.com/v2/partner/leads/document-status?applicationId=LAI-110081529&amp;context=PRE_TERMS'
+</code></pre>
+
+<blockquote>
+<p>Output response:</p>
+</blockquote>
+<pre><code class="json">[
+  {
+    &quot;documentType&quot;: &quot;string&quot;,
+    &quot;documents&quot;: [
+      {
+        &quot;documentTag&quot;: &quot;string&quot;,
+        &quot;latestVerificationDate&quot;: &quot;2020-12-13T14:33:39.948Z&quot;,
+        &quot;pendencyDetails&quot;: [
+          {
+            &quot;autoGenText&quot;: &quot;string&quot;,
+            &quot;comments&quot;: &quot;string&quot;,
+            &quot;uuid&quot;: &quot;string&quot;,
+            &quot;verificationDate&quot;: &quot;2020-12-13T14:33:39.948Z&quot;,
+            &quot;verificationStatus&quot;: &quot;PENDING&quot;
+          }
+        ]
+      }
+    ],
+    &quot;latestVerificationStatus&quot;: &quot;PENDING&quot;
+  }
+]
+</code></pre>
+
+<p>This API will provide document status and any document pendencies raised for an application</p>
+<h3 id="http-request_2">HTTP Request</h3>
+<p><code>GET https://lkext.lendingkart.com/v2/partner/leads/document-status</code></p>
+<h3 id="query-parameters_2">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Data Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applicationId</td>
+<td>This is application id</td>
+<td>String</td>
+<td>true</td>
+</tr>
+<tr>
+<td>context</td>
+<td>This is pre-term,posterm,all</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+This api do not contain request body
+</aside>
+
+<h2 id="response-body">Response Body</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leadId</td>
+<td>This is unique leadId</td>
+<td>String</td>
+</tr>
+<tr>
+<td>application ID</td>
+<td>This is application id</td>
+<td>String</td>
+</tr>
+<tr>
+<td>message</td>
+<td>This is message returned</td>
+<td>String</td>
+</tr>
+<tr>
+<td>loanDeliveryMethod</td>
+<td>This is delivery method of you application</td>
+<td>String</td>
+</tr>
+<tr>
+<td>leadId</td>
+<td>This is unique leadId</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+<p><a href="https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/getDocumentPendenciesUsingGET">To try this Api please click this</a></p>
+<h1 id="disbursal-data-api">disbursal data API</h1>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' --header 'X-Api-Key: f3a25750-1e7f-4c34-84ae-c8ca92f1d211'
+ 'https://lkext.lendingkart.com/v2/partner/leads/disbursal-data/LAI-110081529'
+</code></pre>
+
+<blockquote>
+<p>Output response:</p>
+</blockquote>
+<pre><code class="json">{
+  &quot;disbursalDate&quot;: &quot;2018-03-21T18:30:00.000Z&quot;,
+  &quot;emiDetails&quot;: {
+    &quot;emiAmount&quot;: 0,
+    &quot;emiEndDate&quot;: &quot;yyyy-MM-dd'T'HH:mm:ss.SSS'Z'&quot;,
+    &quot;emisRemaining&quot;: 0,
+    &quot;latestEmiDelay&quot;: 0,
+    &quot;maxDelay&quot;: 0,
+    &quot;nextDueDate&quot;: &quot;yyyy-MM-dd'T'HH:mm:ss.SSS'Z'&quot;,
+    &quot;totalEmis&quot;: 0
+  },
+  &quot;interestRate&quot;: 36,
+  &quot;interestType&quot;: &quot;Fixed&quot;,
+  &quot;loanAmount&quot;: 500010,
+  &quot;loanBankAccountDetails&quot;: {
+    &quot;accountHolderName&quot;: &quot;Bala&quot;,
+    &quot;accountNumber&quot;: &quot;88888888888&quot;,
+    &quot;accountType&quot;: &quot;Savings account&quot;,
+    &quot;bankName&quot;: &quot;AXIS BANK&quot;,
+    &quot;branchName&quot;: &quot;Koramangala&quot;
+  },
+  &quot;loanDisbursalAmount&quot;: 500000,
+  &quot;loanId&quot;: &quot;LAI-110081529&quot;
+}
+</code></pre>
+
+<p>This API provides the details related to disbursal of a loan.</p>
+<h3 id="http-request_3">HTTP Request</h3>
+<p><code>GET https://lkext.lendingkart.com/v2/partner/leads/disbursal-data/&lt;your applicationId&gt;</code></p>
+<h3 id="query-parameters_3">Query Parameters</h3>
+<p>No query parameters</p>
+<aside class="warning">
+This api do not contain request body
+</aside>
+
+<h2 id="response-body_1">Response Body</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leadId</td>
+<td>This is unique leadId</td>
+<td>String</td>
+</tr>
+<tr>
+<td>application ID</td>
+<td>This is application id</td>
+<td>String</td>
+</tr>
+<tr>
+<td>message</td>
+<td>This is message returned</td>
+<td>String</td>
+</tr>
+<tr>
+<td>loanDeliveryMethod</td>
+<td>This is delivery method of you application</td>
+<td>String</td>
+</tr>
+<tr>
+<td>leadId</td>
+<td>This is unique leadId</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+Succesful api call would give you 200
+</aside>
+
+<p><a href="https://lkext.lendingkart.com/apidoc/home.html#!/Partner_Controller/getDocumentPendenciesUsingGET">To try this Api please click this</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Auth/" class="btn btn-neutral" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Auth/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
